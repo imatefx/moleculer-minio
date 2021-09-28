@@ -59,7 +59,7 @@ module.exports = {
          * @param {number} timeout - Amount of miliseconds to wait for a ping response
          * @returns {PromiseLike<boolean|MinioPingError>}
          */
-		ping({timeout = 5000} = {}) {
+		ping({timeout = this.settings.minioHealthCheckInterval} = {}) {
 			return this.Promise.race([
 				this.client.listBuckets().then(() => true),
 				this.Promise.delay(timeout).then(() => {throw new MinioPingError();})
