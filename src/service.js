@@ -678,18 +678,18 @@ module.exports = {
      */
 	started() {
 		/* istanbul ignore next */
-		return this.Promise.resolve()
-			.then(() => this.ping())
-			.then(() => {
-				this.settings.minioHealthCheckInterval ?
-					this.healthCheckInterval = setInterval(
-						() => this.ping().catch(e => this.logger.error("Minio backend can not be reached", e)),
-						this.settings.minioHealthCheckInterval)
-					: undefined;
-				return undefined;
-			}).catch(e => {
-				throw new MinioInitializationError(e.message);
-			});
+// 		return this.Promise.resolve()
+// 			.then(() => this.ping())
+// 			.then(() => {
+// 				this.settings.minioHealthCheckInterval ?
+// 					this.healthCheckInterval = setInterval(
+// 						() => this.ping().catch(e => this.logger.error("Minio backend can not be reached", e)),
+// 						this.settings.minioHealthCheckInterval)
+// 					: undefined;
+// 				return undefined;
+// 			}).catch(e => {
+// 				throw new MinioInitializationError(e.message);
+// 			});
 	},
 	/**
      * Service stopped lifecycle event handler.
