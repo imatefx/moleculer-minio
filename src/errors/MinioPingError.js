@@ -1,4 +1,4 @@
-const {MoleculerRetryableError} = require("moleculer/src/errors");
+const {MoleculerRetryableError} = require("moleculer").Errors;
 
 /**
  * Error that should be thrown when the Minio Backend can not be pinged
